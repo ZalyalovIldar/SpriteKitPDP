@@ -7,27 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A0406095E14E67A44686E16 /* libPods-SpriteKitPDP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34D4202237E13CE0B69688E4 /* libPods-SpriteKitPDP.a */; };
 		7C4DFD3E1DA44854009C8022 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4DFD3D1DA44854009C8022 /* AppDelegate.swift */; };
-		7C4DFD401DA44854009C8022 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7C4DFD3F1DA44854009C8022 /* GameScene.sks */; };
-		7C4DFD421DA44854009C8022 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7C4DFD411DA44854009C8022 /* Actions.sks */; };
-		7C4DFD441DA44854009C8022 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4DFD431DA44854009C8022 /* GameScene.swift */; };
-		7C4DFD461DA44854009C8022 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4DFD451DA44854009C8022 /* GameViewController.swift */; };
-		7C4DFD491DA44854009C8022 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C4DFD471DA44854009C8022 /* Main.storyboard */; };
 		7C4DFD4B1DA44854009C8022 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C4DFD4A1DA44854009C8022 /* Assets.xcassets */; };
 		7C4DFD4E1DA44854009C8022 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C4DFD4C1DA44854009C8022 /* LaunchScreen.storyboard */; };
+		7C4DFD581DA448D4009C8022 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4DFD571DA448D4009C8022 /* GameScene.swift */; };
+		7C4DFD5A1DA448E7009C8022 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4DFD591DA448E7009C8022 /* GameViewController.swift */; };
+		7C4DFD5C1DA448FD009C8022 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C4DFD5B1DA448FD009C8022 /* Main.storyboard */; };
+		7C4DFD5E1DA44941009C8022 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4DFD5D1DA44941009C8022 /* Constants.swift */; };
+		7C4DFD651DA44C24009C8022 /* SpaceShipSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4DFD641DA44C24009C8022 /* SpaceShipSprite.swift */; };
+		7C4DFD671DA4534C009C8022 /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = 7C4DFD661DA4534C009C8022 /* background-music-aac.caf */; };
+		7C4DFD6C1DA4555D009C8022 /* Spaceship.svg in Resources */ = {isa = PBXBuildFile; fileRef = 7C4DFD6B1DA4555D009C8022 /* Spaceship.svg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34D4202237E13CE0B69688E4 /* libPods-SpriteKitPDP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SpriteKitPDP.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DDA412FDE5506ACE89ACC2B /* Pods-SpriteKitPDP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpriteKitPDP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpriteKitPDP/Pods-SpriteKitPDP.debug.xcconfig"; sourceTree = "<group>"; };
+		6A74D2ECFBB20FEB23F22A3C /* Pods-SpriteKitPDP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpriteKitPDP.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpriteKitPDP/Pods-SpriteKitPDP.release.xcconfig"; sourceTree = "<group>"; };
 		7C4DFD3A1DA44854009C8022 /* SpriteKitPDP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpriteKitPDP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C4DFD3D1DA44854009C8022 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7C4DFD3F1DA44854009C8022 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		7C4DFD411DA44854009C8022 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		7C4DFD431DA44854009C8022 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		7C4DFD451DA44854009C8022 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		7C4DFD481DA44854009C8022 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7C4DFD4A1DA44854009C8022 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C4DFD4D1DA44854009C8022 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C4DFD4F1DA44854009C8022 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C4DFD571DA448D4009C8022 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		7C4DFD591DA448E7009C8022 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		7C4DFD5B1DA448FD009C8022 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		7C4DFD5D1DA44941009C8022 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7C4DFD641DA44C24009C8022 /* SpaceShipSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceShipSprite.swift; sourceTree = "<group>"; };
+		7C4DFD661DA4534C009C8022 /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background-music-aac.caf"; sourceTree = "<group>"; };
+		7C4DFD681DA4539C009C8022 /* Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridge-Header.h"; sourceTree = "<group>"; };
+		7C4DFD6B1DA4555D009C8022 /* Spaceship.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Spaceship.svg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +44,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A0406095E14E67A44686E16 /* libPods-SpriteKitPDP.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F83B87212038B6834F51923 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5DDA412FDE5506ACE89ACC2B /* Pods-SpriteKitPDP.debug.xcconfig */,
+				6A74D2ECFBB20FEB23F22A3C /* Pods-SpriteKitPDP.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6D01F4E054ACCBB2526D96B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34D4202237E13CE0B69688E4 /* libPods-SpriteKitPDP.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7C4DFD311DA44854009C8022 = {
 			isa = PBXGroup;
 			children = (
 				7C4DFD3C1DA44854009C8022 /* SpriteKitPDP */,
+				7C4DFD5F1DA4494E009C8022 /* SupportingFiles */,
 				7C4DFD3B1DA44854009C8022 /* Products */,
+				5F83B87212038B6834F51923 /* Pods */,
+				6D01F4E054ACCBB2526D96B9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,16 +91,51 @@
 			isa = PBXGroup;
 			children = (
 				7C4DFD3D1DA44854009C8022 /* AppDelegate.swift */,
-				7C4DFD3F1DA44854009C8022 /* GameScene.sks */,
-				7C4DFD411DA44854009C8022 /* Actions.sks */,
-				7C4DFD431DA44854009C8022 /* GameScene.swift */,
-				7C4DFD451DA44854009C8022 /* GameViewController.swift */,
-				7C4DFD471DA44854009C8022 /* Main.storyboard */,
-				7C4DFD4A1DA44854009C8022 /* Assets.xcassets */,
-				7C4DFD4C1DA44854009C8022 /* LaunchScreen.storyboard */,
-				7C4DFD4F1DA44854009C8022 /* Info.plist */,
+				7C4DFD621DA4497F009C8022 /* ViewControllers */,
+				7C4DFD611DA44974009C8022 /* Scenes */,
+				7C4DFD601DA4496B009C8022 /* Sprites */,
+				7C4DFD5B1DA448FD009C8022 /* Main.storyboard */,
 			);
 			path = SpriteKitPDP;
+			sourceTree = "<group>";
+		};
+		7C4DFD5F1DA4494E009C8022 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				7C4DFD6B1DA4555D009C8022 /* Spaceship.svg */,
+				7C4DFD661DA4534C009C8022 /* background-music-aac.caf */,
+				7C4DFD5D1DA44941009C8022 /* Constants.swift */,
+				7C4DFD4F1DA44854009C8022 /* Info.plist */,
+				7C4DFD4A1DA44854009C8022 /* Assets.xcassets */,
+				7C4DFD4C1DA44854009C8022 /* LaunchScreen.storyboard */,
+				7C4DFD681DA4539C009C8022 /* Bridge-Header.h */,
+			);
+			name = SupportingFiles;
+			path = SpriteKitPDP;
+			sourceTree = "<group>";
+		};
+		7C4DFD601DA4496B009C8022 /* Sprites */ = {
+			isa = PBXGroup;
+			children = (
+				7C4DFD641DA44C24009C8022 /* SpaceShipSprite.swift */,
+			);
+			name = Sprites;
+			sourceTree = "<group>";
+		};
+		7C4DFD611DA44974009C8022 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				7C4DFD571DA448D4009C8022 /* GameScene.swift */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		7C4DFD621DA4497F009C8022 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7C4DFD591DA448E7009C8022 /* GameViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,9 +145,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7C4DFD521DA44854009C8022 /* Build configuration list for PBXNativeTarget "SpriteKitPDP" */;
 			buildPhases = (
+				C3829DDAFCC2C08103FC86B2 /* Check Pods Manifest.lock */,
 				7C4DFD361DA44854009C8022 /* Sources */,
 				7C4DFD371DA44854009C8022 /* Frameworks */,
 				7C4DFD381DA44854009C8022 /* Resources */,
+				D0639C6771F8C47B74020EA9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -132,38 +199,65 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C4DFD491DA44854009C8022 /* Main.storyboard in Resources */,
-				7C4DFD401DA44854009C8022 /* GameScene.sks in Resources */,
+				7C4DFD671DA4534C009C8022 /* background-music-aac.caf in Resources */,
+				7C4DFD5C1DA448FD009C8022 /* Main.storyboard in Resources */,
 				7C4DFD4B1DA44854009C8022 /* Assets.xcassets in Resources */,
 				7C4DFD4E1DA44854009C8022 /* LaunchScreen.storyboard in Resources */,
-				7C4DFD421DA44854009C8022 /* Actions.sks in Resources */,
+				7C4DFD6C1DA4555D009C8022 /* Spaceship.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C3829DDAFCC2C08103FC86B2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D0639C6771F8C47B74020EA9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpriteKitPDP/Pods-SpriteKitPDP-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7C4DFD361DA44854009C8022 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C4DFD441DA44854009C8022 /* GameScene.swift in Sources */,
-				7C4DFD461DA44854009C8022 /* GameViewController.swift in Sources */,
+				7C4DFD5E1DA44941009C8022 /* Constants.swift in Sources */,
+				7C4DFD5A1DA448E7009C8022 /* GameViewController.swift in Sources */,
+				7C4DFD581DA448D4009C8022 /* GameScene.swift in Sources */,
 				7C4DFD3E1DA44854009C8022 /* AppDelegate.swift in Sources */,
+				7C4DFD651DA44C24009C8022 /* SpaceShipSprite.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7C4DFD471DA44854009C8022 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7C4DFD481DA44854009C8022 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7C4DFD4C1DA44854009C8022 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -270,6 +364,7 @@
 		};
 		7C4DFD531DA44854009C8022 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DDA412FDE5506ACE89ACC2B /* Pods-SpriteKitPDP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SpriteKitPDP/Info.plist;
@@ -277,12 +372,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ildar.itis.SpriteKitPDP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SpriteKitPDP/Bridge-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		7C4DFD541DA44854009C8022 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A74D2ECFBB20FEB23F22A3C /* Pods-SpriteKitPDP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SpriteKitPDP/Info.plist;
@@ -290,6 +387,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ildar.itis.SpriteKitPDP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SpriteKitPDP/Bridge-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -313,6 +411,7 @@
 				7C4DFD541DA44854009C8022 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

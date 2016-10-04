@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  SpriteKitPDP
 //
-//  Created by Ildar Zalyalov on 04.10.16.
+//  Created by Ildar Zalyalov on 01.10.16.
 //  Copyright © 2016 com.ildar.itis. All rights reserved.
 //
 

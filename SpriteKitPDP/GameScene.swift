@@ -2,92 +2,69 @@
 //  GameScene.swift
 //  SpriteKitPDP
 //
-//  Created by Ildar Zalyalov on 04.10.16.
+//  Created by Ildar Zalyalov on 01.10.16.
 //  Copyright © 2016 com.ildar.itis. All rights reserved.
 //
 
-import SpriteKit
+import Foundation
 import GameplayKit
 
-class GameScene: SKScene {
-    
-    var entities = [GKEntity]()
-    var graphs = [String : GKGraph]()
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private var lastUpdateTime : TimeInterval = 0
-    private var label : SKLabelNode?
-    private var spinnyNode : SKShapeNode?
+    private var currentRainDropSpawnTime : TimeInterval = 0
+    private var rainDropSpawnRate : TimeInterval = 0.5
+    private let random = GKARC4RandomSource()
+    
+    private let spaceShip = SpaceShipSprite.newInstance()
     
     override func sceneDidLoad() {
-
         self.lastUpdateTime = 0
         
-        // Get label node from scene and store it for use later
-        self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
-        if let label = self.label {
-            label.alpha = 0.0
-            label.run(SKAction.fadeIn(withDuration: 2.0))
-        }
+        var worldFrame = frame
+        worldFrame.origin.x -= 100
+        worldFrame.origin.y -= 100
+        worldFrame.size.height += 200
+        worldFrame.size.width += 200
         
-        // Create shape node to use during mouse interaction
-        let w = (self.size.width + self.size.height) * 0.05
-        self.spinnyNode = SKShapeNode.init(rectOf: CGSize.init(width: w, height: w), cornerRadius: w * 0.3)
+        self.physicsBody = SKPhysicsBody(edgeLoopFrom: worldFrame)
+        self.physicsWorld.contactDelegate = self
+        self.physicsBody?.categoryBitMask = WorldFrameCategory
         
-        if let spinnyNode = self.spinnyNode {
-            spinnyNode.lineWidth = 2.5
-            
-            spinnyNode.run(SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(M_PI), duration: 1)))
-            spinnyNode.run(SKAction.sequence([SKAction.wait(forDuration: 0.5),
-                                              SKAction.fadeOut(withDuration: 0.5),
-                                              SKAction.removeFromParent()]))
-        }
+        let floorNode = SKShapeNode(rectOf: CGSize(width: size.width, height: 5))
+        floorNode.position = CGPoint(x: size.width / 2, y: 50)
+        floorNode.fillColor = SKColor.red
+        floorNode.physicsBody = SKPhysicsBody(edgeFrom: CGPoint(x: -size.width / 2, y: 0), to: CGPoint(x: size.width, y: 0))
+        floorNode.physicsBody?.categoryBitMask = FloorCategory
+        floorNode.physicsBody?.contactTestBitMask = RainDropCategory
+        floorNode.physicsBody?.restitution = 0.3
+        
+        addChild(floorNode)
+        
+        spaceShip.updatePosition(point: CGPoint(x: frame.midX, y: frame.midY))
+        addChild(spaceShip)
+        
+        let backgroundMusic = SKAudioNode(fileNamed: "background-music-aac.caf")
+        backgroundMusic.autoplayLooped = true
+        addChild(backgroundMusic)
     }
     
-    
-    func touchDown(atPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.green
-            self.addChild(n)
-        }
-    }
-    
-    func touchMoved(toPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.blue
-            self.addChild(n)
-        }
-    }
-    
-    func touchUp(atPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.red
-            self.addChild(n)
-        }
-    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let label = self.label {
-            label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
-        }
+        let touchPoint = touches.first?.location(in: self)
         
-        for t in touches { self.touchDown(atPoint: t.location(in: self)) }
+        if let point = touchPoint {
+            spaceShip.setDestination(destination: point)
+        }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
+        let touchPoint = touches.first?.location(in: self)
+        
+        if let point = touchPoint {
+            spaceShip.setDestination(destination: point)
+        }
     }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-    }
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-    }
-    
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
@@ -100,11 +77,52 @@ class GameScene: SKScene {
         // Calculate time since last update
         let dt = currentTime - self.lastUpdateTime
         
-        // Update entities
-        for entity in self.entities {
-            entity.update(deltaTime: dt)
+        // Update the Spawn Timer
+        currentRainDropSpawnTime += dt
+        
+        if currentRainDropSpawnTime > rainDropSpawnRate {
+            currentRainDropSpawnTime = 0
+            
+            spawnRaindrop()
         }
         
+        spaceShip.update(deltaTime: dt)
+        
         self.lastUpdateTime = currentTime
+    }
+    
+    func spawnRaindrop() {
+        
+        let rainDrop = SKShapeNode(rectOf: CGSize(width: 20, height: 20))
+        rainDrop.position = CGPoint(x: size.width / 2, y:  size.height / 2)
+        rainDrop.fillColor = SKColor.yellow
+        rainDrop.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 20, height: 20))
+        rainDrop.physicsBody?.categoryBitMask = RainDropCategory
+        rainDrop.physicsBody?.contactTestBitMask = WorldFrameCategory
+        
+        let randomPosition = abs(CGFloat(random.nextInt()).truncatingRemainder(dividingBy: size.width))
+        rainDrop.position = CGPoint(x: randomPosition, y: size.height)
+        
+        addChild(rainDrop)
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        if (contact.bodyA.categoryBitMask == RainDropCategory) {
+            contact.bodyA.node?.physicsBody?.collisionBitMask = 0
+            contact.bodyA.node?.physicsBody?.categoryBitMask = 0
+        } else if (contact.bodyB.categoryBitMask == RainDropCategory) {
+            contact.bodyB.node?.physicsBody?.collisionBitMask = 0
+            contact.bodyB.node?.physicsBody?.categoryBitMask = 0
+        }
+        
+        if contact.bodyA.categoryBitMask == WorldFrameCategory {
+            contact.bodyB.node?.removeFromParent()
+            contact.bodyB.node?.physicsBody = nil
+            contact.bodyB.node?.removeAllActions()
+        } else if contact.bodyB.categoryBitMask == WorldFrameCategory {
+            contact.bodyA.node?.removeFromParent()
+            contact.bodyA.node?.physicsBody = nil
+            contact.bodyA.node?.removeAllActions()
+        }
     }
 }
